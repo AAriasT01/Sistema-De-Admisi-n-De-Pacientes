@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.titulo-banner{
+    font-size: 30px;
+}
+
+.banner{
+    height: 70vh;
+    
+}
