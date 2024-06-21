@@ -1,0 +1,33 @@
+---
+import BasePaginas from '../layouts/BasePaginas.astro';
+import data from '../data.json';
+
+interface PageData {
+    titulo: string;
+    slug: string;
+    detalle1: string;
+    detalle2: string;
+}
+
+export async function getStaticPaths() {
+    const pages: PageData[] = data;
+    return pages.map((page) => (
+        {
+            params: { slug: page.slug}
+            , props: page
+        }
+    ));
+}
+const page = Astro.props;
+---
+
+<BasePaginas title="MedicData">
+
+<div class="bg-gray-100 border border-gray-300 text-center rounded-lg shadow-md p-6 mb-4">
+    <h1 class="text-xl font-bold text-gray-800 mb-2">{page.titulo}</h1>
+    <p class="text-gray-600 mb-2">{page.detalle1}</p>
+    <p class="text-gray-600">{page.detalle2}</p>
+</div>
+
+
+</BasePaginas>
