@@ -11,11 +11,12 @@ interface MenuOption {
 }
 
 const menuOptions: MenuOption[] = [
-  { name: "¿Quiénes Somos?", url: "#" },
-  { name: "Módulos", url: "#" },
-  { name: "Descargas", url: "#" },
-  { name: "Soporte", url: "#" },
-  { name: "Blogs", url: "#" },
+  { name: "Inicio", url: "/" },
+  { name: "¿Quiénes Somos?", url: "/about" },
+  { name: "Módulos", url: "/mod" },
+  { name: "Descargas", url: "/download" },
+  { name: "Soporte", url: "/support" },
+  { name: "Blogs", url: "/blog" },
 ];
 ---
 
@@ -28,20 +29,22 @@ const menuOptions: MenuOption[] = [
     aria-label="Global"
   >
     <div class="flex items-center gap-x-12">
-      <a id="imagen" href="/" class="-m-1.5 p-1.5">
+      <a id="imagen" href="index.astro" class="-m-1.5 p-1.5">
         <span class="sr-only">{title}</span>
-        <img
+        <img 
           class="h-8 w-auto"
           src="/src/img/icono (3).png"
           alt=""
         />
       </a>
       <div class="hidden lg:flex lg:gap-x-12">
+       
+
         {
           menuOptions.map((option) => (
             <a
               href={option.url}
-              class="text-sm font-semibold leading-6 text-gray-900 hover:text-sky-900 "
+              class="text-sm font-semibold leading-6 text-gray-900 hover:text-sky-900 hover:border-sky-300 border-b-2 border-transparent transition duration-500"
               onclick="selectMenuOption(event)"
             >
               {option.name}
@@ -73,11 +76,11 @@ const menuOptions: MenuOption[] = [
       </button>
     </div>
     <div class="hidden lg:flex">
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900 mx-7"
+      <a href="/signUp" class="text-sm font-semibold leading-6 text-gray-900 mx-7"
         >Resgistrarse</a
       >
       
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900 mx-7"
+      <a href="/signIn" class="text-sm font-semibold leading-6 text-gray-900 mx-7"
         >Iniciar Sesión</a
       >
     </div>
@@ -97,10 +100,10 @@ const menuOptions: MenuOption[] = [
     >
       <div class="flex items-center justify-between">
         <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
+          <span class="sr-only">Sistema</span>
           <img
             class="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            src="/src/img/icono (3).png"
             alt=""
           />
         </a>
@@ -109,7 +112,7 @@ const menuOptions: MenuOption[] = [
           type="button"
           class="-m-2.5 rounded-md p-2.5 text-gray-700"
         >
-          <span class="sr-only">Close menu</span>
+          <span class="sr-only">Cerrar</span>
           <svg
             class="h-6 w-6"
             fill="none"
@@ -129,36 +132,47 @@ const menuOptions: MenuOption[] = [
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
             <a
-              href="/cm"
+              href="/"
+              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              >Inicio</a
+            >
+            <a
+              href="/about"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
               >¿Quiénes Somos?</a
             >
             <a
-              href="#"
+              href="/mod"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
               >Módulos</a
             >
             <a
-              href="#"
+              href="/download"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
               >Descargas</a
             >
             <a
-              href="#"
+              href="/support"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
               >Soporte</a
             >
             <a
-              href="#"
+              href="/blog"
               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
               >Blogs</a
             >
           </div>
           <div class="py-6">
             <a
-              href="#"
+              href="/signUp"
               class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-              >Log in</a
+              >Resgistrarse</a
+            >
+
+            <a
+              href="/signIn"
+              class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+              >Iniciar Sesión</a
             >
           </div>
         </div>
@@ -183,52 +197,11 @@ const menuOptions: MenuOption[] = [
       mobileMenu?.classList.add("hidden");
     });
 
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 0) {
-        navbar?.classList.add("bg-gradient-to-b", "from-white", "to-white/50");
-        navbar?.classList.remove("bg-white");
-      } else {
-        navbar?.classList.add("bg-white");
-        navbar?.classList.remove(
-          "bg-gradient-to-b",
-          "from-white",
-          "to-white/50"
-        );
-      }
-    });
+  
 
-    // Set the first menu item as active by default
-    //menuItems[0]?.classList.add('text-cyan-400', 'border-b-2', 'border-cyan-400');
-
-    // Add click event listeners to menu items
-    menuItems.forEach((item) => {
-      item.addEventListener("click", selectMenuOption);
-    });
   });
 
-  function selectMenuOption(event) {
-    const menuItems = document.querySelectorAll("nav a");
-
-    // Remove the active styles from all menu items
-    menuItems.forEach((item) => {
-      item.classList.remove("text-cyan-400", "border-b-2", "border-gray-400");
-    });
-
-    // Check if the clicked element is the logo link (id="imagen")
-    const clickedElement = event.currentTarget;
-    if (clickedElement.id === "imagen") {
-      // If it's the logo link, do not add active styles
-      event.preventDefault(); // This will stop the link from being followed
-      return; // Exit the function early
-    }
-
-    // Add active styles to the clicked menu item
-    clickedElement.classList.add(
-      "text-cyan-400",
-      "border-b-2",
-      "border-cyan-400"
-    );
-  }
+ 
 </script>
 
 <style>

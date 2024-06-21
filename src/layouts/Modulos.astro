@@ -1,0 +1,56 @@
+---
+
+import CardModulo from '../components/CardModulo.astro';
+
+
+const cardDataModulo = [
+  {
+    titulo: 'Módulo de Dashboard',
+    descripcion: 'Este módulo de control de Dashboard....... Permite a los médicos registrar y editar información crucial como antecedentes médicos, síntomas actuales, resultados de exámenes y diagnósticos preliminares.',
+    urlImagen1: '/src/img/consultass.png',
+    urlImagen2: '/src/img/1.webp',
+    urlImagen3: '/src/img/cama.png'
+  },
+  {
+    titulo: 'Módulo de Expedientes',
+    descripcion: 'Este módulo se centra en la recolección y gestión de los datos médicos iniciales del paciente. Permite a los médicos registrar y editar información crucial como antecedentes médicos, síntomas actuales, resultados de exámenes y diagnósticos preliminares.',
+    urlImagen1: '/src/img/consultass.png',
+    urlImagen2: '/src/img/1.webp',
+    urlImagen3: '/src/img/cama.png'
+  },
+  {
+    titulo: 'Módulo de Consultas',
+    descripcion: 'Este módulo de consultas....... Permite a los médicos registrar y editar información crucial como antecedentes médicos, síntomas actuales, resultados de exámenes y diagnósticos preliminares.',
+    urlImagen1: '/src/img/consultass.png',
+    urlImagen2: '/src/img/1.webp',
+    urlImagen3: '/src/img/cama.png'
+  },
+  {
+    titulo: 'Módulo de Control de Camas',
+    descripcion: 'Este módulo de control de camas....... Permite a los médicos registrar y editar información crucial como antecedentes médicos, síntomas actuales, resultados de exámenes y diagnósticos preliminares.',
+    urlImagen1: '/src/img/consultass.png',
+    urlImagen2: '/src/img/1.webp',
+    urlImagen3: '/src/img/cama.png'
+  },
+  {
+    titulo: 'Módulo de Control de Internos',
+    descripcion: 'Este módulo de control de Internos....... Permite a los médicos registrar y editar información crucial como antecedentes médicos, síntomas actuales, resultados de exámenes y diagnósticos preliminares.',
+    urlImagen1: '/src/img/consultass.png',
+    urlImagen2: '/src/img/1.webp',
+    urlImagen3: '/src/img/cama.png'
+  }
+];
+
+---
+
+<div class="flex flex-wrap gap-3 pb-7 justify-center w-5/6 items-center">
+  {cardDataModulo.map((card) => (
+    <CardModulo
+      titulo={card.titulo}
+      descripcion={card.descripcion}
+      urlImagen1={card.urlImagen1}
+      urlImagen2={card.urlImagen2}
+      urlImagen3={card.urlImagen3}
+    />
+  ))}
+</div>

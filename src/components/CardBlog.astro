@@ -1,0 +1,21 @@
+---
+export interface Props {
+  titulo: string;
+  descripcion: string;
+  linkHref: string;
+  urlImagen: string;
+}
+
+const {titulo, descripcion, linkHref, urlImagen} = Astro.props;
+---
+
+<article class="mb-8  bg-blue-600 shadow-md overflow-hidden focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-500">
+    <div class="w-full">
+        <img src={urlImagen}  class="w-full h-64 object-cover focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-500" alt="Imagen">
+    </div>
+    <div class="p-6 h-full bg-blue-900 text-white">
+        <h2 class="text-3xl font-bold mb-4"> {titulo}</h2>
+        <p class="leading-relaxed mb-4 text-justify"> {descripcion}</p>
+        <a href={linkHref} class="block text-blue-400 hover:underline">Leer Más</a>
+    </div>
+</article>

@@ -1,0 +1,63 @@
+---
+
+import CardBlog from '../components/CardBlog.astro';
+
+const cardDataBlog = [
+  {
+    titulo: 'La detección precoz del cáncer de colon en el siglo XXI',
+    descripcion: 'El cáncer de colon o colorrectal es aquel que se desarrolla en el intestino grueso o en el recto. El objetivo pri...',
+    linkHref: 'https://medicointernista.es/cancer-de-colon/',
+    urlImagen:'src/img/blog1.jpeg'
+  },
+  {
+    titulo: 'Las enfermedades autoinmunes',
+    descripcion: 'Varios estudios médicos demuestran que las infecciones víricas en los pacientes inmunodeprimidos, en general, se asocian a un mayor riesgo...',
+    linkHref: 'https://medicointernista.es/enfermedades-autoinmunes-infeccion-covid19/',
+    urlImagen:'src/img/blog7.jpeg'
+  },
+  {
+    titulo: 'Asma y embarazo: delicados aliados',
+    descripcion: 'A menudo existen complicaciones del asma durante la gestación, unas veces por empeoramiento de la propia enfermedad durante este periodo de la vida de la mujer y, otras, porque la propia paciente abandona...',
+    linkHref: 'https://medicointernista.es/cancer-de-colon/',
+    urlImagen:'src/img/blog3.jpeg'
+  },
+  {
+    titulo: 'Artículo 4',
+    descripcion: 'Descripción corta de que va a encontrar en este artículo. Descripción corta de que va a encontrar en este artículo...',
+    linkHref: 'https://medicointernista.es/cancer-de-colon/',
+    urlImagen:'src/img/blog4.jpeg'
+  },
+  {
+    titulo: 'Artículo 5',
+    descripcion: 'Descripción corta de que va a encontrar en este artículo. Descripción corta de que va a encontrar en este artículo...',
+    linkHref: 'https://medicointernista.es/cancer-de-colon/',
+    urlImagen:'src/img/blog5.jpeg'
+  },
+  {
+    titulo: 'Artículo 6',
+    descripcion: 'Descripción corta de que va a encontrar en este artículo. Descripción corta de que va a encontrar en este artículo...',
+    linkHref: 'https://medicointernista.es/cancer-de-colon/',
+    urlImagen:'src/img/blog6.jpeg'
+  },
+  {
+    titulo: 'Artículo 7',
+    descripcion: 'Descripción corta de que va a encontrar en este artículo. Descripción corta de que va a encontrar en este artículo.',
+    linkHref: 'https://medicointernista.es/cancer-de-colon/',
+    urlImagen:'src/img/blog3.jpeg'
+  }
+];
+
+---
+<div class="container mx-auto p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cardDataBlog.map((card) => (
+            <CardBlog
+              titulo={card.titulo}
+              descripcion={card.descripcion}
+              linkHref={card.linkHref}
+              urlImagen={card.urlImagen}
+            />
+          ))}
+    </div>
+
+</div>

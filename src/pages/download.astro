@@ -1,0 +1,33 @@
+---
+import BasePaginas from '../layouts/BasePaginas.astro';
+---
+<BasePaginas title="SISTEMA DE PACIENTE mt-30">
+    <div class="border border-solid border-gray-300 p-5 flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-900">
+        <div class="w-1/2 pr-5">
+            <img src="/src/img/des.jpeg" class="rounded-lg shadow-lg" alt="Imagen">
+        </div>
+        <div class=" w-2/3 pl-5 flex flex-col items-center justify-center ">
+            <h2 class="text-2xl font-bold text-white mb-2">Manuales</h2>
+            <p class="text-white leading-relaxed">Descripción de que va encontrar en los manuales</p>
+            <a href="url_de_descarga_Manual" class="max-w-64 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded inline-block text-sm mt-2">Descargar Manual (PDF)</a>
+        </div>
+      </div>
+
+
+
+    <div class="category">
+        <h2 class="text-lg font-bold mb-2">Actualizaciones Guías y Manuales</h2>
+        <div class="flex items-center space-x-2 mb-2">
+            <h2 class="text-gray-900 font-bold">Version 0.0.1</h2>
+            <a href="url_de_manual_de_usuario_0.0.1_pdf" class="text-blue-500 hover:text-blue-700 font-bold text-sm">Manual de Usuario (PDF)</a>
+            </div>
+        <div class="flex items-center space-x-2 mb-2">
+            <h2 class="text-gray-900 font-bold">Version 0.0.2</h2>
+            <a href="url_de_manual_de_usuario_0.0.2_pdf" class="text-blue-500 hover:text-blue-700 font-bold text-sm">Manual de Usuario (PDF)</a>
+            </div>
+    </div>    
+    
+
+  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  <script type="module" src="script.js"></script>
+</BasePaginas>
